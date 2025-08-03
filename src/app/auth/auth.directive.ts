@@ -7,17 +7,17 @@ import { AuthService } from './auth.service';
   standalone: true
 })
 export class AuthDirective {
-  userType = input.required<Permission>();
+  userType = input.required<Permission>({ alias: 'appAuth' });
   private authServices = inject(AuthService);
 
   constructor() {
     effect(() => {
       if (this.authServices.activePermission() === this.userType()) {
-        console.log('Show elemnt');
+        console.log('Show element');
       } else {
         console.log('Do not show elements');
       }
     });
-   }
+  }
 
 }
