@@ -9,7 +9,7 @@ import { Directive, input } from "@angular/core";
 })
 
 export class SafeLinkDirective {
-    queryParam = input('my-app');
+    queryParam = input('my-app', {alias: 'appSafeLink'});
 
     constructor() {
         console.log('SafeLinkDirective is active!');
